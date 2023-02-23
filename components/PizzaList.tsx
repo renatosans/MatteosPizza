@@ -13,9 +13,7 @@ const PizzaList = ({items}) => {
       </p>
       <div className={styles.wrapper}>{
         (items)
-        ? items.data.characters.results.map((pizza) => <PizzaCard pizza={pizza} />)  // Rick and Morty GraphQL API
-        // ? items.map((pizza) => <PizzaCard pizza={pizza} />)              // Kenzie Burger API
-        // ? items.results.map((pizza) => <PizzaCard pizza={pizza} />)   // Rick and Morty REST API
+        ? items.map((pizza) => <PizzaCard pizza={pizza} />)
         : <p>No item to display</p>
       }
     </div>
