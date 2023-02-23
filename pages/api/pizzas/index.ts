@@ -14,13 +14,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 const savePizza = async (req: NextApiRequest, res: NextApiResponse) => {
-    prisma.pizza.create({ data: req.body })
+    prisma.produit.create({ data: req.body })
     .then((result) => res.send(result))
 	.catch((error) => res.send("Error: " + error.message))
 }
 
 const getPizzas = async (req: NextApiRequest, res: NextApiResponse) => {
-    prisma.pizza.findMany()
+    prisma.produit.findMany({ where: { categorie: 'pizza' } })
     .then((pizzas) => res.send(pizzas))
     .catch((error) => res.send("Error: " + error.message))
 }
