@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model commande {
+  id_commande    Int              @id @default(autoincrement())
+  id_user        Int
+  date           DateTime         @db.Date
+  total          Float            @db.Float
+  users          users            @relation(fields: [id_user], references: [id_user], onDelete: NoAction, onUpdate: NoAction, map: "FK_COMMANDE_USER")
+  ligne_commande ligne_commande[]
+
+  @@index([id_user], map: "id_user")
+}
+
+model ligne_commande {
+  id_commande Int
+  id_produit  Int
+  quantite    Int
+  commande    commande @relation(fields: [id_commande], references: [id_commande], onDelete: NoAction, onUpdate: NoAction, map: "FK_COMMANDE")
+  produit     produit  @relation(fields: [id_produit], references: [id_produit], onDelete: NoAction, onUpdate: NoAction, map: "FK_PRODUITSS")
+
+  @@id([id_commande, id_produit])
+  @@index([id_produit], map: "FK_PRODUITSS")
+}
+
+model order_items {
+  id         Int    @id @default(autoincrement())
+  order_id   Int
+  product_id Int
+  quantity   Int
+  orders     orders @relation(fields: [order_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "order_items_ibfk_1")
+
+  @@index([order_id], map: "order_id")
+}
+
+model orders {
+  id          Int           @id @default(autoincrement())
+  id_user     Int
+  total_price Float         @db.Float
+  created     DateTime      @db.DateTime(0)
+  modified    DateTime      @db.DateTime(0)
+  status      orders_status @default(dbgenerated("1"))
+  order_items order_items[]
+  users       users         @relation(fields: [id_user], references: [id_user], onDelete: Cascade, onUpdate: NoAction, map: "orders_ibfk_1")
+
+  @@index([id_user], map: "id_user")
+}
+
+model produit {
+  id_produit     Int              @id @default(autoincrement())
+  nom            String           @db.VarChar(50)
+  reference      String           @db.VarChar(255)
+  categorie      String           @db.VarChar(50)
+  quantite       Int
+  prix           Float            @db.Float
+  image          String           @db.VarChar(255)
+  description    String           @db.VarChar(255)
+  ligne_commande ligne_commande[]
+}
+
+model promotion {
+  id_prom          String   @id @db.VarChar(5)
+  Description      String   @db.Text
+  date_debut       DateTime @db.Date
+  date_fin         DateTime @db.Date
+  pourcentage_prom Int
+}
+
+model reclamation {
+  id_reclamation Int    @id @default(autoincrement())
+  name           String @db.VarChar(255)
+  email          String @db.VarChar(255)
+  text           String @db.Text
+  state          Int
+}
+
+model users {
+  id_user        Int        @id @default(autoincrement())
+  prenom         String     @db.VarChar(30)
+  nom            String     @db.VarChar(30)
+  sexe           String?    @db.VarChar(10)
+  date_naissance String?    @db.VarChar(30)
+  adresse        String?    @db.VarChar(50)
+  CIN            String?    @db.VarChar(8)
+  num_tel        String?    @db.VarChar(8)
+  nbr_point      Int?       @default(0)
+  image          String?    @db.VarChar(255)
+  email          String     @db.VarChar(255)
+  privilege      Int?
+  username       String     @db.VarChar(30)
+  password       String     @db.VarChar(30)
+  commande       commande[]
+  orders         orders[]
+}

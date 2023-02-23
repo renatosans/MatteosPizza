@@ -1,11 +1,10 @@
 import PizzaCard from "./PizzaCard"
-import { ResultSet } from "../models/types"
 import styles from '../styles/PizzaList.module.css'
 
 
 // Projeto original:   https://github.com/BinaryLeo/next_js_pizza_ordering
 // Alterações:         adicionado fetch de API e listagem de items da API
-const PizzaList: React.FC<{items:ResultSet}> = ({items}) => {
+const PizzaList = ({items}) => {
   return (
     <div className={styles.container}>
       <h1 className={'styles.title'}>The Best Pizza In Town</h1>

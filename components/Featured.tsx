@@ -5,20 +5,20 @@ import styles from '../styles/Featured.module.css'
 
 const Featured = () => {
     const [index,setIndex]= useState(0)
-    const images=[
+    const images = [
         "/img/featured.png",
         "/img/featured1.png",
         "/img/featured2.png"
     ]
 
-   const handleArrow = (direction: string) =>{ // direction as parameter  < left | or | right >
-    if(direction==="l"){
-        setIndex(index !== 0 ? index-1 : 2) // decrease until index is 2
-    }
-    if(direction==="r"){
-        setIndex(index !== 2 ? index+1 : 0) // increase until index is 0
-    }
-};
+    const handleArrow = (direction: string) => { // direction as parameter  < left | or | right >
+        if(direction==="l"){
+            setIndex(index !== 0 ? index-1 : 2) // decrease until index is 2
+        }
+        if(direction==="r"){
+            setIndex(index !== 2 ? index+1 : 0) // increase until index is 0
+        }
+    };
 
     return (
         <div className={styles.container}>
