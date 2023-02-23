@@ -14,14 +14,11 @@ export default function Home() {
   // https://rickandmortyapi.com/graphql
 
   useEffect(() => {
-    fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
+    fetch('api/pizzas')
     .then(resp => resp.json())
     .then(pizzas => setItems(pizzas))
     .catch(error => console.error(error))
   }, []);
-
-  const fetcher2 = (query: string) => { return axios.post(url, { query }).then((res) => res.data) }
-  const { data: pizzaItems, error, isValidating, mutate } = useSWR(query, fetcher2)
 
   return (
     <div className={styles.container}>
