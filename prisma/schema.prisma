@@ -45,7 +45,7 @@ model orders {
   total_price Float         @db.Float
   created     DateTime      @db.DateTime(0)
   modified    DateTime      @db.DateTime(0)
-  status      orders_status @default(dbgenerated("1"))
+  status      Boolean
   order_items order_items[]
   users       users         @relation(fields: [id_user], references: [id_user], onDelete: Cascade, onUpdate: NoAction, map: "orders_ibfk_1")
 
