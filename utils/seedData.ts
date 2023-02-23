@@ -1,18 +1,91 @@
-import { promotionType } from "./types"
+import { pizzaType, promotionType } from "./types"
 
 
-export const allPizzas = [
+const defaultDescription: string = 'Choose 5 ingredients from our menu';
+
+
+export const allPizzas: pizzaType[] = [
     {
-		"nom": "pizza 4 fromaggi",
-		"reference": "#33jj",
-		"categorie": "pizza",
-		"quantite": 0,
-		"prix": 5.5,
-		"image": "img/produits/pizza/pizza4fromaggi.jpg",
-		"description": "pizza au fromage"
-	},
+      nom: 'Neapolitan Pizza',
+      image: '/img/produits/pizza/palermo.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 15,
+      description: defaultDescription
+    },
+    {
+      nom: 'California Pizza',
+      image: '/img/produits/pizza/pizza6.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
+    {
+      nom: 'New York-Style Pizza',
+      image: '/img/produits/pizza/pizza7.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
+    {
+      nom: 'Volcano',
+      image: '/img/produits/pizza/pizza8.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
+    {
+      nom: 'Sicilian Pizza',
+      image: '/img/produits/pizza/pizza1.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 15,
+      description: defaultDescription
+    },
+    {
+      nom: 'Havaian',
+      image: '/img/produits/pizza/pizza2.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
+    {
+      nom: 'Detroit Pizza',
+      image: '/img/produits/pizza/palermo2.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 25,
+      description: defaultDescription
+    },
+    {
+      nom: 'Chicago Pizza',
+      image: '/img/produits/pizza/pizza3.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 15,
+      description: defaultDescription
+    },
+    {
+      nom: 'Greek Pizza',
+      image: '/img/produits/pizza/pizza4.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
+    {
+      nom: 'Types of Pizza Crust',
+      image: '/img/produits/pizza/pizza5.jpg',
+      categorie: 'pizza',
+      quantity: 0,
+      prix: 9,
+      description: defaultDescription
+    },
 ]
-
 
 export const allPromotions: promotionType[] = [
 	{
@@ -35,5 +108,5 @@ export const allPromotions: promotionType[] = [
 		"date_debut": new Date("2023-06-10"),
 		"date_fin": new Date("2023-10-10"),
 		"pourcentage_prom": 17
-	}
+	},
 ]
