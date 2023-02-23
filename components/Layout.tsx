@@ -1,7 +1,9 @@
-import Footer from "./Footer"
+import React from "react";
+import Footer from "./Footer";
 import Navbar from "./Navbar"
 
-const Layout = ({children}) => {
+
+const Layout = ({children}: React.PropsWithChildren<{}>) => {
     return (
         <>
             <Navbar/>
@@ -10,5 +12,6 @@ const Layout = ({children}) => {
         </>
     );
 };
+
 
 export default Layout
