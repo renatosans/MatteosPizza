@@ -20,7 +20,7 @@ const savePizza = async (req: NextApiRequest, res: NextApiResponse) => {
 }
 
 const getPizzas = async (req: NextApiRequest, res: NextApiResponse) => {
-    prisma.produit.findMany({ where: { categorie: 'sandwich' } })
+    prisma.produit.findMany({ where: { categorie: 'pizza' } })
     .then((pizzas) => res.send(pizzas))
     .catch((error) => res.send("Error: " + error.message))
 }
