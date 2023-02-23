@@ -1,8 +1,9 @@
 
 export type pizzaType = {
     nom: string,
+    reference: string,
     categorie: string,
-    quantity: number,
+    quantite: number,
     prix: number,
     image: string,
     description: string,

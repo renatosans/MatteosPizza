@@ -7,85 +7,96 @@ const defaultDescription: string = 'Choose 5 ingredients from our menu';
 export const allPizzas: pizzaType[] = [
     {
       nom: 'Neapolitan Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/palermo.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 15,
       description: defaultDescription
     },
     {
       nom: 'California Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza6.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
     {
       nom: 'New York-Style Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza7.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
     {
       nom: 'Volcano',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza8.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
     {
       nom: 'Sicilian Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza1.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 15,
       description: defaultDescription
     },
     {
       nom: 'Havaian',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza2.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
     {
       nom: 'Detroit Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/palermo2.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 25,
       description: defaultDescription
     },
     {
       nom: 'Chicago Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza3.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 15,
       description: defaultDescription
     },
     {
       nom: 'Greek Pizza',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza4.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
     {
       nom: 'Types of Pizza Crust',
+      reference: 'trending',
       image: '/img/produits/pizza/pizza5.jpg',
       categorie: 'pizza',
-      quantity: 0,
+      quantite: 0,
       prix: 9,
       description: defaultDescription
     },
 ]
+
 
 export const allPromotions: promotionType[] = [
 	{
