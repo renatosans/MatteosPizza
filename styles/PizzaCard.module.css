@@ -21,7 +21,7 @@
   color: #777;
   text-align: center;
 }
-.pizza_heat{
+.pizza_heat {
   display: flex;
   flex-direction: row;
 }
