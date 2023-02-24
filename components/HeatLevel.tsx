@@ -4,8 +4,8 @@ import styles from "../styles/PizzaCard.module.css"
 
 const HeatIcon = () => {
     return (
-        <div className={styles.pizza_heat_icon}>
-            <Image src='/pepper.png' alt='pepper' width={24} height={24} />
+        <div className={styles.pizza_heat}>
+            <Image src='/img/pepper.png' alt='pepper' width={24} height={24} />
         </div>
     )
 }

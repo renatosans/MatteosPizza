@@ -21,10 +21,9 @@
   color: #777;
   text-align: center;
 }
-.pizza_heat_icon{
-  position: relative;
-  height: 24px;
-  width: 24px;
+.pizza_heat{
+  display: flex;
+  flex-direction: row;
 }
 @media screen and (max-width: 480px) {
   .container {
