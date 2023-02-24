@@ -52,6 +52,14 @@ model orders {
   @@index([id_user], map: "id_user")
 }
 
+model ingredients {
+  ingredient_id       Int                   @id @default(autoincrement())
+  ingredient_name     String?               @db.VarChar(250)
+  flag                Boolean?              @default(true)
+  img                 String?               @db.VarChar(250)
+  supplier            String
+}
+
 model produit {
   id_produit     Int              @id @default(autoincrement())
   nom            String           @db.VarChar(50)

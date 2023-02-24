@@ -1,4 +1,4 @@
-import { pizzaType, promotionType } from "./types"
+import { pizzaType, ingredientType, promotionType } from "./types"
 
 
 const defaultDescription: string = 'Choose 5 ingredients from our menu';
@@ -107,6 +107,57 @@ export const allPizzas: pizzaType[] = [
     },
 ]
 
+export const allIngredients: ingredientType[] = [
+  {
+    "ingredient_id" : 1,
+    "ingredient_name" : "Calabresa",
+    "flag" : true,
+    "img" : "/img/ingredient1.jpg",
+    "supplier": "Assaí Atacadista",
+  },
+  {
+    "ingredient_id" : 2,
+    "ingredient_name" : "Ovo",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/top-view-duck-eggs-dark-surface_1150-36985.jpg",
+    "supplier": "Extra",
+  },
+  {
+    "ingredient_id" : 3,
+    "ingredient_name" : "Tomate",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/fresh-tomatoes-ready-cook_1150-38243.jpg",
+    "supplier": "Mercadão Atacadista",
+  },
+  {
+    "ingredient_id" : 4,
+    "ingredient_name" : "Mussarela",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/isometric-cheese-composition_23-2148161904.jpg",
+    "supplier": "Extra",
+  },
+  {
+    "ingredient_id" : 5,
+    "ingredient_name" : "Azeitona",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/fresh-tasty-green-olives_1220-1414.jpg",
+    "supplier": "Mercadão Atacadista",
+  },
+  {
+    "ingredient_id" : 6,
+    "ingredient_name" : "Peperoni",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/tasty-traditional-chorizo-assortment_23-2148980296.jpg",
+    "supplier": "Assaí Atacadista",
+  },
+  {
+    "ingredient_id" : 7,
+    "ingredient_name" : "Presunto",
+    "flag" : true,
+    "img" : "https://img.freepik.com/free-photo/pork-ham_1339-2076.jpg",
+    "supplier": "Assaí Atacadista",
+  },
+]
 
 export const allPromotions: promotionType[] = [
 	{

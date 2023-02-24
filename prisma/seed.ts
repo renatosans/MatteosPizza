@@ -1,5 +1,5 @@
 import { prisma } from '../utils/connection'
-import { allPizzas, allPromotions } from '../utils/seedData';
+import { allPizzas, allIngredients, allPromotions } from '../utils/seedData';
 
 
 // run the command on terminal to populate data
@@ -8,6 +8,7 @@ import { allPizzas, allPromotions } from '../utils/seedData';
 async function main() {
 
     await prisma.produit.createMany({ data: allPizzas })
+    await prisma.ingredients.createMany({ data: allIngredients})
     await prisma.promotion.createMany({ data: allPromotions })
 }
 

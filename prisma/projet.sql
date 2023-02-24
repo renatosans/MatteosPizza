@@ -136,6 +136,32 @@ INSERT INTO `orders` VALUES (55,5,5.00,'2017-04-04 06:57:06','2017-04-04 06:57:0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ingredients`
+--
+
+DROP TABLE IF EXISTS `ingredients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8 */;
+CREATE TABLE `ingredients` (
+  `ingredient_id` int NOT NULL AUTO_INCREMENT,
+  `ingredient_name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `flag` tinyint(1) DEFAULT '1',
+  `img` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `supplier` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ingredient_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ingredients`
+--
+
+LOCK TABLES `ingredients` WRITE;
+/*!40000 ALTER TABLE `ingredients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ingredients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `produit`
 --
 

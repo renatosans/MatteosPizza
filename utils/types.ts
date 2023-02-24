@@ -1,4 +1,12 @@
 
+export type ingredientType = {
+    ingredient_id: number,
+    ingredient_name: string,
+    flag: boolean,
+    img: string,
+    supplier: string,
+}
+
 export type pizzaType = {
     nom: string,
     reference: string,
