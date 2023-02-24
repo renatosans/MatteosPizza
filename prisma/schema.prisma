@@ -61,6 +61,7 @@ model produit {
   prix           Float            @db.Float
   image          String           @db.VarChar(255)
   description    String           @db.VarChar(255)
+  heat           Int
   ligne_commande ligne_commande[]
 }
 
