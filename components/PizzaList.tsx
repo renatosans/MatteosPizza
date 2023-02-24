@@ -15,7 +15,7 @@ const PizzaList = ({items, desc}: props) => {
       <p className={'styles.desc'}>{desc}</p>
       <div className={styles.wrapper}>{
         (items)
-        ? items.map((pizza: pizzaType) => <PizzaCard pizza={pizza} currency={"U$"} adv={"Hurry!"} />)
+        ? items.map((pizza: pizzaType) => <PizzaCard pizza={pizza} currency={"U$"} adv={""} />)
         : <p>No item to display</p>
       }
     </div>
