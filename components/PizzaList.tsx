@@ -2,8 +2,6 @@ import PizzaCard from "./PizzaCard"
 import styles from '../styles/PizzaList.module.css'
 
 
-// Projeto original:   https://github.com/BinaryLeo/next_js_pizza_ordering
-// Alterações:         adicionado fetch de API e listagem de items da API
 const PizzaList = ({items}) => {
   return (
     <div className={styles.container}>
