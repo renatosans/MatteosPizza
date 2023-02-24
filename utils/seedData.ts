@@ -12,7 +12,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription,
+      description: 'A basic dough, raw tomatoes, fresh mozzarella cheese, fresh basil, and olive oil',
       heat: 3,
     },
     {
@@ -22,7 +22,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'Chicken, peanut sauce, artichoke hearts, and goat cheese',
       heat: 2,
     },
     {
@@ -32,7 +32,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'Pizza dough, tomato sauce, mozzarella',
       heat: 1,
     },
     {
@@ -42,7 +42,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'BBQ sauce, chicken, pineapple, green peppers, onions, jalapenos, and mozzarella',
       heat: 3,
     },
     {
@@ -52,7 +52,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription,
+      description: 'Pecorino, pepperoni, and sliced mozzarella cheese',
       heat: 4,
     },
     {
@@ -62,7 +62,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'Pineapple, tomato sauce, cheese, ham or bacon',
       heat: 2,
     },
     {
@@ -72,7 +72,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 25,
-      description: defaultDescription,
+      description: 'Chewy crust, pizza sauce, melty cheese galore and pepperoni cups',
       heat: 3,
     },
     {
@@ -82,7 +82,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription,
+      description: 'Pizza dough, tomato sauce, cheese, sausage, pepperoni, onions and mushrooms',
       heat: 5,
     },
     {
@@ -92,7 +92,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'Pizza dough, cheese, tomato sauce, feta, spinach and olives',
       heat: 4,
     },
     {
