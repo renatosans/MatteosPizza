@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { pizzaType } from '../utils/types'
 import { useState, useEffect } from 'react'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
@@ -6,17 +7,12 @@ import PizzaList from '../components/PizzaList'
 
 
 export default function Home() {
-  const [items, setItems] = useState();
-
-  // API samples: 
-  // https://hamburgueria-kenzie-json-serve.herokuapp.com/products
-  // https://rickandmortyapi.com/api/character/?page=19
-  // https://rickandmortyapi.com/graphql
+  const [pizzas, setPizzas] = useState<pizzaType>();
 
   useEffect(() => {
     fetch('api/pizzas')
     .then(resp => resp.json())
-    .then(pizzas => setItems(pizzas))
+    .then(resultSet => setPizzas(resultSet))
     .catch(error => console.error(error))
   }, []);
 
@@ -28,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      <Featured/>
-     <PizzaList items={items} />
+     <PizzaList items={pizzas} />
     </div>
   )
 }

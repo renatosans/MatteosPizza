@@ -12,7 +12,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 3,
     },
     {
       nom: 'California Pizza',
@@ -21,7 +22,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 2,
     },
     {
       nom: 'New York-Style Pizza',
@@ -30,7 +32,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 1,
     },
     {
       nom: 'Volcano',
@@ -39,7 +42,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 3,
     },
     {
       nom: 'Sicilian Pizza',
@@ -48,7 +52,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 4,
     },
     {
       nom: 'Havaian',
@@ -57,7 +62,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 2,
     },
     {
       nom: 'Detroit Pizza',
@@ -66,7 +72,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 25,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 3,
     },
     {
       nom: 'Chicago Pizza',
@@ -75,7 +82,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 15,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 5,
     },
     {
       nom: 'Greek Pizza',
@@ -84,7 +92,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 4,
     },
     {
       nom: 'Types of Pizza Crust',
@@ -93,7 +102,8 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription
+      description: defaultDescription,
+      heat: 1,
     },
 ]
 

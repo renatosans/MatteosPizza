@@ -7,6 +7,7 @@ export type pizzaType = {
     prix: number,
     image: string,
     description: string,
+    heat: number,
 }
 
 export type promotionType = {

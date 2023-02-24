@@ -21,6 +21,11 @@
   color: #777;
   text-align: center;
 }
+.pizza_heat_icon{
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
 @media screen and (max-width: 480px) {
   .container {
     width: 100%;
