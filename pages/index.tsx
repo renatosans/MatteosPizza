@@ -7,7 +7,7 @@ import PizzaList from '../components/PizzaList'
 
 
 export default function Home() {
-  const [pizzas, setPizzas] = useState<pizzaType>();
+  const [pizzas, setPizzas] = useState<pizzaType[]>();
 
   useEffect(() => {
     fetch('api/pizzas')
@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      <Featured/>
-     <PizzaList items={pizzas} />
+     <PizzaList items={pizzas} desc={'Pedir pizza é sempre uma boa ideia'} />
     </div>
   )
 }
