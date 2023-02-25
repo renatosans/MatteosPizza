@@ -20,10 +20,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { ingredient_id, ingredient_name, flag, supplier, imageData } = req.body;
 
-	const dir = '/img/produit/ingredients/';
+	const dir = '/img/ingredients/';
 	const filename = "ingredient999.jpg";
-	// path.resolve('./public', dir, filename)
 	const buffer = Buffer.from(imageData, 'base64');
+	const filePath: fs.PathLike = path.resolve(`/public${dir}`, filename);
+	console.log(`FilePath is ${filePath}`);
 	fs.open(filename, "w", (err, fd) => {
 		fs.write(fd, buffer, 0, buffer.length, (err, writtenBytes, buffer) => {
 			console.log(`Wrote ${writtenBytes} bytes to file`);
