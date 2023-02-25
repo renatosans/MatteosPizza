@@ -16,7 +16,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	}
 }
 
-// TODO : Fix image upload
+// TODO : >>   Fix image upload    <<
+// Open INSOMNIA to test the endpoint ( http://localhost:3000/api/ingredients ),  use   sampleData.json
 const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { ingredient_id, ingredient_name, flag, supplier, imageData } = req.body;
 
