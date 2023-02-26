@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 // Open INSOMNIA to test the endpoint ( http://localhost:3000/api/ingredients ),  use   sampleData.json
 // Expected behaviour : write the image to File System and store the image relative path in the database
 const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
-	const { ingredient_id, ingredient_name, flag, supplier, imageData } = req.body;
+	const { ingredient_id, ingredient_name, flag, supplier, imageFormat, imageData } = req.body;
 
 	const nextNumber = Math.round(Math.random() * 99999);
 	const timeStampSalt = `NaN${Date.now()}`;
@@ -33,7 +33,7 @@ const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 		fs.write(fd, buffer, 0, buffer.length, (err, writtenBytes, buffer) => {
 			console.log(`Wrote ${writtenBytes} bytes to file`);
 		});
-	}); 
+	});
 
 	const img: string = dir + filename;
 	const newIngredient: ingredientType = { ingredient_id, ingredient_name, flag, img, supplier };
