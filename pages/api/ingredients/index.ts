@@ -40,11 +40,11 @@ const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 
     prisma.ingredients.create({ data: newIngredient })
     .then((result) => res.send(result))
-	.catch((error) => res.send("Error: " + error.message))
+	.catch((error) => res.status(500).send("Error: " + error.message))
 }
 
 const getIngredients = async (req: NextApiRequest, res: NextApiResponse) => {
     prisma.ingredients.findMany()
     .then((ingredients) => res.send(ingredients))
-    .catch((error) => res.send("Error: " + error.message))
+    .catch((error) => res.status(500).send("Error: " + error.message))
 }
