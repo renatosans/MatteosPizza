@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { pizzaType } from '../utils/types'
 import { useState, useEffect } from 'react'
+import Draggable from 'react-draggable'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
@@ -33,6 +34,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster/>
+			<Draggable>
+        <div></div>
+			</Draggable>
       <Featured/>
       <div className={styles.actions}>
         <button className={styles.button} onClick={addPizza}>My Pizzas</button>

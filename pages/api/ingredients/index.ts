@@ -22,8 +22,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { ingredient_id, ingredient_name, flag, supplier, imageData } = req.body;
 
+	const nextNumber = Math.round(Math.random() * 99999);
+	const timeStampSalt = `NaN${Date.now()}`;
 	const dir = './public/img/ingredients/';
-	const filename = "ingredient999.jpg";
+	const filename = `ingredient_${timeStampSalt}_${nextNumber.toString()}.jpg`;
 	const buffer = Buffer.from(imageData, 'base64');
 	const filePath: fs.PathLike = path.resolve(`${dir}`, filename);
 	console.log(`FilePath is ${filePath}`);
