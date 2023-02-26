@@ -20,6 +20,16 @@ export const IngredientForm = ({dialogRef}: any) => {
 			return;
 		}
 
+        try {
+            await fetch(`/api/ingredients`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', },
+                body: JSON.stringify(ingredient),
+            })
+        } catch (error) {
+            // ...
+        }
+
         // ...
     }
 
