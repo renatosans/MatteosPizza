@@ -1,5 +1,6 @@
-import { useState, useEffect, FormEvent } from 'react'
+import styles from "../styles/Ingredient.module.css"
 import { notification } from '../utils/notification'
+import { useState, useEffect, FormEvent } from 'react'
 import toast, { Toaster, ToastOptions } from "react-hot-toast";
 
 
@@ -25,9 +26,16 @@ export const IngredientForm = ({dialogRef}: any) => {
     return (
     <>
         <Toaster />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form} >
             <input type="text" name="ingredient_name" value={ingredient.ingredient_name}/>
             <input type="supplier" name="supplier" value={ingredient.supplier}/>
+
+            <div className={styles.fileDialog}>
+                <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png" />
+                <img src="logo.png"></img>
+            </div>
+
+            <button type="submit" className={styles.button}>Salvar</button>
         </form>
     </>
     )
