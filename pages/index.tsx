@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
+import toast, { Toaster } from "react-hot-toast"
 
 
 export default function Home() {
@@ -16,6 +17,14 @@ export default function Home() {
     .catch(error => console.error(error))
   }, []);
 
+  const addPizza = () => {
+    toast.success(`NEW pizza`);
+  }
+
+  const addIngredient = () => {
+    toast.success(`NEW ingredient`);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,8 +32,13 @@ export default function Home() {
         <meta name="description" content="Best pizza shop in town" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <Featured/>
-     <PizzaList items={pizzas} desc={'Pedir pizza é sempre uma boa ideia'} />
+      <Toaster/>
+      <Featured/>
+      <div className={styles.actions}>
+        <button className={styles.button} onClick={addPizza}>My Pizzas</button>
+        <button className={styles.button} onClick={addIngredient}>My Ingredients</button>
+      </div>
+      <PizzaList items={pizzas} desc={'Pedir pizza é sempre uma boa ideia'} />
     </div>
   )
 }
