@@ -26,7 +26,8 @@ export const IngredientForm = ({dialogRef}: any) => {
     <>
         <Toaster />
         <form onSubmit={handleSubmit}>
-
+            <input type="text" name="ingredient_name" value={ingredient.ingredient_name}/>
+            <input type="supplier" name="supplier" value={ingredient.supplier}/>
         </form>
     </>
     )

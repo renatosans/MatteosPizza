@@ -6,6 +6,7 @@ import { Button, Dialog } from '@mui/material'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
+import { IngredientForm } from '../components/IngredientForm'
 import toast, { Toaster } from "react-hot-toast"
 
 
@@ -29,7 +30,7 @@ export default function Home() {
   }
 
   const addIngredient = () => {
-    toast.success(`NEW ingredient`);
+    setOpen(true);
   }
 
   return (
@@ -42,7 +43,7 @@ export default function Home() {
       <Toaster/>
 			<Draggable>
         <Dialog open={open} onClose={toggle} BackdropProps={{ style: { backgroundColor: "transparent" } }} >
-          <Button onClick={() => toggle()}>Close</Button>
+          <IngredientForm dialogRef={{ toggle }} />
         </Dialog>
 			</Draggable>
       <Featured/>
