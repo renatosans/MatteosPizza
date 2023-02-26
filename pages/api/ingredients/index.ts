@@ -18,17 +18,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 // TODO : >>   Fix image upload    <<
 // Open INSOMNIA to test the endpoint ( http://localhost:3000/api/ingredients ),  use   sampleData.json
-// Expected behaviour : write the file in the correct folder
-// Problem encountered : file is being written in the root of the project
+// Expected behaviour : write the image to File System and store the image relative path in the database
 const saveIngredient = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { ingredient_id, ingredient_name, flag, supplier, imageData } = req.body;
 
-	const dir = '/img/ingredients/';
+	const dir = './public/img/ingredients/';
 	const filename = "ingredient999.jpg";
 	const buffer = Buffer.from(imageData, 'base64');
-	const filePath: fs.PathLike = path.resolve(`/public${dir}`, filename);
+	const filePath: fs.PathLike = path.resolve(`${dir}`, filename);
 	console.log(`FilePath is ${filePath}`);
-	fs.open(filename, "w", (err, fd) => {
+	fs.open(filePath, "w", (err, fd) => {
 		fs.write(fd, buffer, 0, buffer.length, (err, writtenBytes, buffer) => {
 			console.log(`Wrote ${writtenBytes} bytes to file`);
 		});
