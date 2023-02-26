@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { pizzaType } from '../utils/types'
 import { useState, useEffect } from 'react'
 import Draggable from 'react-draggable'
+import { Button, Dialog } from '@mui/material'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
@@ -9,6 +10,7 @@ import toast, { Toaster } from "react-hot-toast"
 
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   const [pizzas, setPizzas] = useState<pizzaType[]>();
 
   useEffect(() => {
@@ -17,6 +19,10 @@ export default function Home() {
     .then(resultSet => setPizzas(resultSet))
     .catch(error => console.error(error))
   }, []);
+
+  const toggle = () => {
+    setOpen(current => !current);
+  }
 
   const addPizza = () => {
     toast.success(`NEW pizza`);
@@ -35,7 +41,9 @@ export default function Home() {
       </Head>
       <Toaster/>
 			<Draggable>
-        <div></div>
+        <Dialog open={open} onClose={toggle} BackdropProps={{ style: { backgroundColor: "transparent" } }} >
+          <Button onClick={() => toggle()}>Close</Button>
+        </Dialog>
 			</Draggable>
       <Featured/>
       <div className={styles.actions}>
