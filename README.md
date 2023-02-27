@@ -9,6 +9,8 @@ A Responsive Restaurant Website using NEXT.js
 - Criação de fature para upload de pizzas personalizadas
 - Criação de feature para upload de ingredientes
 
+![screenshot](public/img/screenshot.jpg)
+
 ## Steps to run the project
 - npm install
 - prisma db push
