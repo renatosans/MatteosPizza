@@ -6,7 +6,8 @@ A Responsive Restaurant Website using NEXT.js
 - Conversão do projeto para Typescript
 - Adicionado script de banco e Endpoint no backend
 - Adicionado fetch de API e listagem de items da API
-
+- Criação de fature para upload de pizzas personalizadas
+- Criação de feature para upload de ingredientes
 
 ## Steps to run the project
 - npm install
