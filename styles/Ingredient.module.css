@@ -38,6 +38,11 @@
     border-color: white;
 }
 
+.label {
+    display: block;
+    color: white;
+}
+
 .input {
     line-height: 1.25;
 

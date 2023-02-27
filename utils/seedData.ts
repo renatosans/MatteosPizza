@@ -150,6 +150,13 @@ export const allIngredients: ingredientType[] = [
     "img" : "/img/ingredients/ingredient6.jpg",
     "supplier": "Assaí Atacadista",
   },
+  {
+    "ingredient_id" : 7,
+    "ingredient_name" : "Queijo Gorgonzola",
+    "flag" : false,
+    "img" : "/img/ingredients/ingredient7.jpg",
+    "supplier" : "Carrefour",
+  }
 ]
 
 export const allPromotions: promotionType[] = [

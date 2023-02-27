@@ -62,9 +62,12 @@ export const IngredientForm = ({dialogRef}: any) => {
     <>
         <Toaster />
         <form onSubmit={handleSubmit} className={styles.form} >
+            <label htmlFor="ingredient_name" className={styles.label} >Ingrediente</label>
             <input type="text" className={styles.input} name="ingredient_name" value={ingredient.ingredient_name} onChange={onChange} />
+            <label htmlFor="supplier" className={styles.label} >Fornecedor</label>
             <input type="text" className={styles.input} name="supplier" value={ingredient.supplier} onChange={onChange} />
 
+            <label htmlFor="foto" className={styles.label} >Foto</label>
             <div className={styles.fileDialog}>
                 <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png" onChange={onChange} />
                 <img style={{'width':'100%'}} src={"data:" + image.imageFormat + ", " + image.imageData} alt={ingredient.ingredient_name}></img>
