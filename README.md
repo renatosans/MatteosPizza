@@ -13,5 +13,6 @@ A Responsive Restaurant Website using NEXT.js
 
 ## Steps to run the project
 - npm install
+- .env
 - prisma db push
 - prisma db seed
