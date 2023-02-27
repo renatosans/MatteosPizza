@@ -1,7 +1,7 @@
-import styles from "../styles/Ingredient.module.css"
+import styles from '../styles/Ingredient.module.css'
 import { notification } from '../utils/notification'
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
-import toast, { Toaster, ToastOptions } from "react-hot-toast";
+import toast, { Toaster, ToastOptions } from 'react-hot-toast'
 
 
 export const IngredientForm = ({dialogRef}: any) => {
@@ -33,9 +33,9 @@ export const IngredientForm = ({dialogRef}: any) => {
                 headers: { 'Content-Type': 'application/json', },
                 body: JSON.stringify(payload),
             })
-        } catch (error) {
-            // ...
-            // ...
+        } catch (error: any) {
+			toast.error(error.message, notification.options as ToastOptions);
+			return;
         }
 
 		toast.success('Ingrediente salvo com sucesso', notification.options as ToastOptions);
