@@ -38,7 +38,7 @@ export const IngredientForm = ({dialogRef}: any) => {
             // ...
         }
 
-		toast.success('Produto salvo com sucesso', notification.options as ToastOptions);
+		toast.success('Ingrediente salvo com sucesso', notification.options as ToastOptions);
 		dialogRef.toggle();
     }
 
