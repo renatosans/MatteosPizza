@@ -1,9 +1,6 @@
 import { pizzaType, ingredientType, promotionType } from "./types"
 
 
-const defaultDescription: string = 'Choose 5 ingredients from our menu';
-
-
 export const allPizzas: pizzaType[] = [
     {
       nom: 'Neapolitan Pizza',
@@ -102,7 +99,7 @@ export const allPizzas: pizzaType[] = [
       categorie: 'pizza',
       quantite: 0,
       prix: 9,
-      description: defaultDescription,
+      description: 'Choose 5 ingredients from our menu',
       heat: 1,
     },
 ]
