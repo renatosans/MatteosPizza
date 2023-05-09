@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { pizzaType } from '../utils/types'
+import { pizzaType, ingredientType } from '../utils/types'
 import { useState, useEffect } from 'react'
 import Draggable from 'react-draggable'
-import { Button, Dialog } from '@mui/material'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
@@ -11,26 +10,37 @@ import toast, { Toaster } from "react-hot-toast"
 
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
   const [pizzas, setPizzas] = useState<pizzaType[]>();
+  const [ingredients, setIngredients] = useState<ingredientType[]>();
+
+  const [form1Open, setForm1Open] = useState<boolean>(false);
+  const [form2Open, setForm2Open] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch('api/pizzas')
+    getPizzas();
+    getIngredients();
+  }, []);
+
+  const getPizzas = () => {
+    fetch(`api/pizzas`)
     .then(resp => resp.json())
     .then(resultSet => setPizzas(resultSet))
     .catch(error => console.error(error))
-  }, []);
+  }
 
-  const toggle = () => {
-    setOpen(current => !current);
+  const getIngredients = () => {
+    fetch(`api/ingredients`)
+    .then(resp => resp.json())
+    .then(resultSet => setIngredients(resultSet))
+    .catch(error => console.error(error))
   }
 
   const addPizza = () => {
-    toast.success(`NEW pizza`);
+    setForm1Open(true);
   }
 
   const addIngredient = () => {
-    setOpen(true);
+    setForm2Open(true);
   }
 
   return (
@@ -41,15 +51,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster/>
-			<Draggable>
-        <Dialog open={open} onClose={toggle} BackdropProps={{ style: { backgroundColor: "transparent" } }} >
-          <IngredientForm dialogRef={{ toggle }} />
-        </Dialog>
-			</Draggable>
       <Featured/>
       <div className={styles.actions}>
         <button className={styles.button} onClick={addPizza}>My Pizzas</button>
         <button className={styles.button} onClick={addIngredient}>My Ingredients</button>
+      </div>
+      <Draggable>
+        <div style={{height: 0}}>
+            <IngredientForm parentRef={{ setForm2Open, getIngredients }} opened={form2Open} />
+        </div>
+      </Draggable>
+      <div style={{ display: 'flex', flexDirection: 'row'}} >{
+          // TODO: fazer a refatoração desse trecho
+          ingredients&&ingredients.map((item: ingredientType) => <img src={item.img} width={50} height={50} /> )
+        }
       </div>
       <PizzaList items={pizzas} desc={'Pedir pizza é sempre uma boa ideia'} />
     </div>

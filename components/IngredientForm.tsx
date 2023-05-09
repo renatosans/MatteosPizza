@@ -1,10 +1,18 @@
 import styles from '../styles/Ingredient.module.css'
 import { notification } from '../utils/notification'
-import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
 import toast, { Toaster, ToastOptions } from 'react-hot-toast'
+import React, { useState, Dispatch, SetStateAction, FormEvent } from 'react'
 
 
-export const IngredientForm = ({dialogRef}: any) => {
+type props = {
+    opened: boolean,
+    parentRef: {
+        setForm2Open: Dispatch<SetStateAction<boolean>>;
+        getIngredients: () => void
+    }
+}
+
+export const IngredientForm = ({opened, parentRef}: props) => {
 
 	const [ingredient, setIngredient] = useState({
         ingredient_name: "",
@@ -35,7 +43,8 @@ export const IngredientForm = ({dialogRef}: any) => {
             if(response.ok)
             {
                 toast.success('Ingrediente salvo com sucesso', notification.options as ToastOptions);
-                dialogRef.toggle();
+                parentRef.getIngredients();  // faz o refresh do inventário
+                parentRef.setForm2Open(false);   // Fecha o formulario
                 return;
             }
 
@@ -55,7 +64,8 @@ export const IngredientForm = ({dialogRef}: any) => {
 			// Reads the file using the FileReader API
 			const reader = new FileReader();
 			reader.onloadend = () => {
-				const fileData = reader.result.split(';base64,');
+                const result = reader.result as string;
+				const fileData = result.split(';base64,');
 				let formato = fileData[0].replace('data:', '') + ';base64';
                 setImage({imageFormat: formato, imageData: fileData[1]});
 			}
@@ -65,8 +75,13 @@ export const IngredientForm = ({dialogRef}: any) => {
         setIngredient({...ingredient, [e.target.name]: e.target.value, });
 	};
 
+    const getVisibility = (open: boolean) => {
+        const visibility = open ? `visible` : `hidden`;
+        return visibility;
+    }
+
     return (
-    <>
+    <div className={styles.container} style={ {visibility: getVisibility(opened)} }>
         <Toaster />
         <form onSubmit={handleSubmit} className={styles.form} >
             <label htmlFor="ingredient_name" className={styles.label} >Ingrediente</label>
@@ -82,7 +97,7 @@ export const IngredientForm = ({dialogRef}: any) => {
 
             <button type="submit" className={styles.button}>Salvar</button>
         </form>
-    </>
+    </div>
     )
 }
 
