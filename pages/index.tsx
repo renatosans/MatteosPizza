@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css'
 import PizzaList from '../components/PizzaList'
 import { IngredientForm } from '../components/IngredientForm'
 import toast, { Toaster } from "react-hot-toast"
+import IngredientCard from '../components/IngredientCard'
 
 
 export default function Home() {
@@ -61,10 +62,10 @@ export default function Home() {
             <IngredientForm parentRef={{ setForm2Open, getIngredients }} opened={form2Open} />
         </div>
       </Draggable>
-      <div style={{ display: 'flex', flexDirection: 'row'}} >{
+      <div style={{ display: 'flex', flexDirection: 'row', gap: 20}} >{
           // TODO: fazer a refatoração desse trecho
-          ingredients&&ingredients.map((item: ingredientType) => <img src={item.img} width={50} height={50} /> )
-        }
+          ingredients&&ingredients.map((item: ingredientType) => <IngredientCard ingredient={item} />
+        )}
       </div>
       <PizzaList items={pizzas} desc={'Pedir pizza é sempre uma boa ideia'} />
     </div>
