@@ -2,6 +2,7 @@ import styles from '../styles/Ingredient.module.css'
 import { notification } from '../utils/notification'
 import toast, { Toaster, ToastOptions } from 'react-hot-toast'
 import React, { useState, Dispatch, SetStateAction, FormEvent } from 'react'
+import { ingredientType } from '../utils/types'
 
 
 type props = {
@@ -12,18 +13,23 @@ type props = {
     }
 }
 
+const emptyIngredient = {
+    ingredient_name: "",
+    flag: false,
+    img: "",
+    supplier: "",
+}
+
+const emptyImage = {
+    imageFormat: "",
+    imageData: "",
+}
+
 export const IngredientForm = ({opened, parentRef}: props) => {
 
-	const [ingredient, setIngredient] = useState({
-        ingredient_name: "",
-		flag: false,
-		supplier: "",
-	})
+	const [ingredient, setIngredient] = useState<ingredientType>(emptyIngredient);
 
-    const [image, setImage] = useState({
-        imageFormat: "",
-        imageData: "",
-    });
+    const [image, setImage] = useState(emptyImage);
 
     const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
@@ -43,6 +49,8 @@ export const IngredientForm = ({opened, parentRef}: props) => {
             if(response.ok)
             {
                 toast.success('Ingrediente salvo com sucesso', notification.options as ToastOptions);
+                setIngredient(emptyIngredient);
+                setImage(emptyImage);
                 parentRef.getIngredients();  // faz o refresh do inventário
                 parentRef.setForm2Open(false);   // Fecha o formulario
                 return;

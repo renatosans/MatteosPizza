@@ -62,7 +62,7 @@ export default function Home() {
             <IngredientForm parentRef={{ setForm2Open, getIngredients }} opened={form2Open} />
         </div>
       </Draggable>
-      <div style={{ display: 'flex', flexDirection: 'row', gap: 20}} >{
+      <div style={{ display: 'flex', flexDirection: 'row', gap: 20, padding: 20}} >{
           // TODO: fazer a refatoração desse trecho
           ingredients&&ingredients.map((item: ingredientType) => <IngredientCard ingredient={item} />
         )}
