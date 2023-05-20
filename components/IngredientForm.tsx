@@ -83,6 +83,15 @@ export const IngredientForm = ({opened, parentRef}: props) => {
         setIngredient({...ingredient, [e.target.name]: e.target.value, });
 	};
 
+    const closeForm = (e: any) => {
+        e.preventDefault();
+
+        setIngredient(emptyIngredient);
+        setImage(emptyImage);
+
+        parentRef.setForm2Open(false);
+    }
+
     const getVisibility = (open: boolean) => {
         const visibility = open ? `visible` : `hidden`;
         return visibility;
@@ -92,6 +101,7 @@ export const IngredientForm = ({opened, parentRef}: props) => {
     <div className={styles.container} style={ {visibility: getVisibility(opened)} }>
         <Toaster />
         <form onSubmit={handleSubmit} className={styles.form} >
+            <button className={styles.closeButton} onClick={closeForm} >X</button>
             <label htmlFor="ingredient_name" className={styles.label} >Ingrediente</label>
             <input type="text" className={styles.input} name="ingredient_name" value={ingredient.ingredient_name} onChange={onChange} />
             <label htmlFor="supplier" className={styles.label} >Fornecedor</label>
